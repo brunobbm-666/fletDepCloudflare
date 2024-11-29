@@ -12,6 +12,7 @@ def main(page: ft.Page):
 
     imagen_base64 = convertir_imagen_base64("./imagen2.jpg")
     filas = []
+    
 
     # Calcular valores
     def calcular_valores(edificio, cantidad):
