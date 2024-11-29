@@ -66,7 +66,7 @@ def main(page: ft.Page):
                     )
                 ),
                 ft.DataCell(ft.TextField(value="100.00", max_length=6, width=120,text_align=ft.TextAlign.RIGHT)), # Ajusta la altura para evitar que se muestre el contador (si aparece)
-                ft.DataCell(ft.TextField(value="1", max_length=3, width=80)),
+                ft.DataCell(ft.TextField(value="1", max_length=3, width=80,text_align=ft.TextAlign.RIGHT)),
                 ft.DataCell(ft.Text("2.60", width=120)),
                 ft.DataCell(ft.Text("0.40", width=120)),
                 ft.DataCell(ft.Text("-", width=100)),
