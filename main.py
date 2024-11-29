@@ -104,7 +104,7 @@ def main(page: ft.Page):
         cells=[
             ft.DataCell(ft.Text("Totales", weight="bold")),
             ft.DataCell(ft.Text("                   0.00", width=150)),
-            ft.DataCell(ft.Text("    0", width=100)),
+            ft.DataCell(ft.Text("              0", width=100)),
             ft.DataCell(ft.Text("", width=150)),
             ft.DataCell(ft.Text("", width=150)),
             ft.DataCell(ft.Text("", width=120)),
@@ -149,7 +149,12 @@ def main(page: ft.Page):
         [
             ft.Column(
                 [
-                    ft.Row([ft.Text("Sucursal:      "), ft.TextField(value="Iquique", width=200)]),
+                    ft.Row([ft.Text("Sucursal:      "),
+                        ft.Dropdown(
+                            options=[ft.dropdown.Option("Matriz"), ft.dropdown.Option("La Florida"), ft.dropdown.Option("Iquique")],
+                            value="No",
+                            width=200,
+                        )]),
                     ft.Row([ft.Text("Ej.Comercial:"), ft.TextField(value="Roxana Perez", width=200)]),
                     ft.Row([ft.Text("Corredor:     "), ft.TextField(value="Orlando Navarro", width=200)]),
                     ft.Row([ft.Text("RUT:            "), ft.TextField(value="56047380-K", width=200)]),
@@ -167,7 +172,7 @@ def main(page: ft.Page):
                     ft.Row([
                         ft.Text("T. Construcción:"),
                         ft.Dropdown(
-                            options=[ft.dropdown.Option("Sí"), ft.dropdown.Option("No")],
+                            options=[ft.dropdown.Option("A:Incombustible"), ft.dropdown.Option("B:Mixto"), ft.dropdown.Option("C:Combustible")],
                             value="No",
                             width=200,
                         )
@@ -183,9 +188,9 @@ def main(page: ft.Page):
                     ft.Row([
                         ft.Text("Zona:                "),
                         ft.Dropdown(
-                            options=[ft.dropdown.Option("Sí"), ft.dropdown.Option("No")],
+                            options=[ft.dropdown.Option("Región 1 - 4"), ft.dropdown.Option("Región 5"), ft.dropdown.Option("Región 1 -12"), ft.dropdown.Option("Región 13 Met"), ft.dropdown.Option("Región 14")],
                             value="No",
-                            width=100,
+                            width=150,
                         )
                     ]),
                     ft.Row([ft.Text("Capacidad por Categoría:"), ft.TextField(value="510.000", width=150)]),
