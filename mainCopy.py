@@ -65,7 +65,7 @@ def main(page: ft.Page):
                         width=180,
                     )
                 ),
-                ft.DataCell(ft.TextField(value="100.00", max_length=6, width=120,text_align=ft.TextAlign.RIGHT)), # Ajusta la altura para evitar que se muestre el contador (si aparece)
+                ft.DataCell(ft.TextField(value="100.00", max_length=6, width=120)),
                 ft.DataCell(ft.TextField(value="1", max_length=3, width=80)),
                 ft.DataCell(ft.Text("2.60", width=120)),
                 ft.DataCell(ft.Text("0.40", width=120)),
@@ -103,8 +103,8 @@ def main(page: ft.Page):
     totales_row = ft.DataRow(
         cells=[
             ft.DataCell(ft.Text("Totales", weight="bold")),
-            ft.DataCell(ft.Text("                   0.00", width=150)),
-            ft.DataCell(ft.Text("    0", width=100)),
+            ft.DataCell(ft.Text("0.00", width=150)),
+            ft.DataCell(ft.Text("0", width=100)),
             ft.DataCell(ft.Text("", width=150)),
             ft.DataCell(ft.Text("", width=150)),
             ft.DataCell(ft.Text("", width=120)),
@@ -141,7 +141,7 @@ def main(page: ft.Page):
     # Botón para el enlace PDF
     boton_pdf = ft.TextButton(
         "PDF",
-        on_click=lambda e: page.launch_url("COTIZACION_CONDOMINIO.pdf"),
+        on_click=lambda e: page.launch_url("https://example.com/your-pdf-file.pdf"),
     )
     
     # Sección de información adicional con ComboBox para opciones Sí/No
@@ -213,7 +213,6 @@ def main(page: ft.Page):
     page.add(
         ft.Image(src_base64=imagen_base64),
         ft.Text("Cotizador Condominios", size=24, weight="bold", color="green"),
-        boton_pdf,  # Aquí se agrega el botón PDF
         info_section,
         ft.Divider(height=20),
         ft.Column(
@@ -225,5 +224,5 @@ def main(page: ft.Page):
             spacing=20,
         ),
     )
-    
+
 ft.app(target=main)
