@@ -10,7 +10,7 @@ def main(page: ft.Page):
         with open(ruta_imagen, "rb") as img_file:
             return base64.b64encode(img_file.read()).decode("utf-8")
 
-    imagen_base64 = convertir_imagen_base64("imagen2.jpg")
+    imagen_base64 = convertir_imagen_base64("imagen2_0.jpg")
     filas = []
     
 
