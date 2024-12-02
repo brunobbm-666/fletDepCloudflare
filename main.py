@@ -155,11 +155,11 @@ def main(page: ft.Page):
                             value="No",
                             width=200,
                         )]),
-                    ft.Row([ft.Text("Ej.Comercial: "), ft.TextField(value="Roxana Perez", width=200)]),
+                    ft.Row([ft.Text("Ej.Comercial:"), ft.TextField(value="Roxana Perez", width=200)]),
                     ft.Row([ft.Text("Corredor:      "), ft.TextField(value="Orlando Navarro", width=200)]),
                     ft.Row([ft.Text("RUT:              "), ft.TextField(value="56047380-K", width=200)]),
                     ft.Row([ft.Text("Nombre:       "), ft.TextField(value="EDIFICIO JUAN FRANCISCO GONZALEZ", width=350)]),
-                    ft.Row([ft.Text("Fecha Vcto:   "), ft.TextField(value="30-01-2024", width=200)]),
+                    ft.Row([ft.Text("Fecha Vcto:  "), ft.TextField(value="30-01-2024", width=200)]),
                     ft.Row([ft.Text("Recargo:       "), ft.TextField(value="0%", width=100)]),
                 ],
                 spacing=10,
@@ -170,7 +170,7 @@ def main(page: ft.Page):
                     ft.Row([ft.Text("Descuento Max"), ft.TextField(value="0%", width=100)]),
                     ft.Row([ft.Text("Descuento:       "), ft.TextField(value="0%", width=100)]),
                     ft.Row([
-                        ft.Text("T. Construcción:"),
+                        ft.Text("T.Construcción:"),
                         ft.Dropdown(
                             options=[ft.dropdown.Option("A:Incombustible"), ft.dropdown.Option("B:Mixto"), ft.dropdown.Option("C:Combustible")],
                             value="No",
