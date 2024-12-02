@@ -65,8 +65,8 @@ def main(page: ft.Page):
                         width=180,
                     )
                 ),
-                ft.DataCell(ft.TextField(value="100.00", max_length=6, width=120,text_align=ft.TextAlign.RIGHT)), # Ajusta la altura para evitar que se muestre el contador (si aparece)
-                ft.DataCell(ft.TextField(value="1", max_length=3, width=80,text_align=ft.TextAlign.RIGHT)),
+                ft.DataCell(ft.TextField(value="100.00", max_length=6, width=120,text_align=ft.TextAlign.LEFT)), # Ajusta la altura para evitar que se muestre el contador (si aparece)
+                ft.DataCell(ft.TextField(value="1", max_length=3, width=80,text_align=ft.TextAlign.LEFT)),
                 ft.DataCell(ft.Text("2.60", width=120)),
                 ft.DataCell(ft.Text("0.40", width=120)),
                 ft.DataCell(ft.Text("-", width=100)),
@@ -103,8 +103,8 @@ def main(page: ft.Page):
     totales_row = ft.DataRow(
         cells=[
             ft.DataCell(ft.Text("Totales", weight="bold")),
-            ft.DataCell(ft.Text("                   0.00", width=150)),
-            ft.DataCell(ft.Text("              0", width=100)),
+            ft.DataCell(ft.Text("0.00", width=120)),
+            ft.DataCell(ft.Text("0", width=80)),
             ft.DataCell(ft.Text("", width=150)),
             ft.DataCell(ft.Text("", width=150)),
             ft.DataCell(ft.Text("", width=120)),
@@ -118,8 +118,8 @@ def main(page: ft.Page):
         column_spacing=15,
         columns=[
             ft.DataColumn(ft.Text("Riesgo", width=180)),
-            ft.DataColumn(ft.Text("Edificio", width=150)),
-            ft.DataColumn(ft.Text("Cantidad", width=100)),
+            ft.DataColumn(ft.Text("Edificio", width=120)),
+            ft.DataColumn(ft.Text("Cantidad", width=80)),
             ft.DataColumn(ft.Text("Incendio y Sismo", width=150)),
             ft.DataColumn(ft.Text("Incendio Solo", width=150)),
             ft.DataColumn(ft.Text("Asistencia", width=120)),
@@ -149,26 +149,26 @@ def main(page: ft.Page):
         [
             ft.Column(
                 [
-                    ft.Row([ft.Text("Sucursal:      "),
+                    ft.Row([ft.Text("Sucursal:       "),
                         ft.Dropdown(
                             options=[ft.dropdown.Option("Matriz"), ft.dropdown.Option("La Florida"), ft.dropdown.Option("Iquique")],
                             value="No",
                             width=200,
                         )]),
-                    ft.Row([ft.Text("Ej.Comercial:"), ft.TextField(value="Roxana Perez", width=200)]),
-                    ft.Row([ft.Text("Corredor:     "), ft.TextField(value="Orlando Navarro", width=200)]),
-                    ft.Row([ft.Text("RUT:            "), ft.TextField(value="56047380-K", width=200)]),
-                    ft.Row([ft.Text("Nombre:     "), ft.TextField(value="EDIFICIO JUAN FRANCISCO GONZALEZ", width=350)]),
-                    ft.Row([ft.Text("Fecha  Vcto:"), ft.TextField(value="30-01-2024", width=200)]),
-                    ft.Row([ft.Text("Recargo:     "), ft.TextField(value="0%", width=100)]),
+                    ft.Row([ft.Text("Ej.Comercial: "), ft.TextField(value="Roxana Perez", width=200)]),
+                    ft.Row([ft.Text("Corredor:      "), ft.TextField(value="Orlando Navarro", width=200)]),
+                    ft.Row([ft.Text("RUT:              "), ft.TextField(value="56047380-K", width=200)]),
+                    ft.Row([ft.Text("Nombre:       "), ft.TextField(value="EDIFICIO JUAN FRANCISCO GONZALEZ", width=350)]),
+                    ft.Row([ft.Text("Fecha Vcto:   "), ft.TextField(value="30-01-2024", width=200)]),
+                    ft.Row([ft.Text("Recargo:       "), ft.TextField(value="0%", width=100)]),
                 ],
                 spacing=10,
                 width=500,
             ),
             ft.Column(
                 [
-                    ft.Row([ft.Text("Descuento Max:"), ft.TextField(value="0%", width=100)]),
-                    ft.Row([ft.Text("Descuento:        "), ft.TextField(value="0%", width=100)]),
+                    ft.Row([ft.Text("Descuento Max"), ft.TextField(value="0%", width=100)]),
+                    ft.Row([ft.Text("Descuento:       "), ft.TextField(value="0%", width=100)]),
                     ft.Row([
                         ft.Text("T. Construcción:"),
                         ft.Dropdown(

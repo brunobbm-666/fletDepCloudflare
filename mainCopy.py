@@ -65,8 +65,8 @@ def main(page: ft.Page):
                         width=180,
                     )
                 ),
-                ft.DataCell(ft.TextField(value="100.00", max_length=6, width=120)),
-                ft.DataCell(ft.TextField(value="1", max_length=3, width=80)),
+                ft.DataCell(ft.TextField(value="100.00", max_length=6, width=120,text_align=ft.TextAlign.RIGHT)), # Ajusta la altura para evitar que se muestre el contador (si aparece)
+                ft.DataCell(ft.TextField(value="1", max_length=3, width=80,text_align=ft.TextAlign.RIGHT)),
                 ft.DataCell(ft.Text("2.60", width=120)),
                 ft.DataCell(ft.Text("0.40", width=120)),
                 ft.DataCell(ft.Text("-", width=100)),
@@ -103,8 +103,8 @@ def main(page: ft.Page):
     totales_row = ft.DataRow(
         cells=[
             ft.DataCell(ft.Text("Totales", weight="bold")),
-            ft.DataCell(ft.Text("0.00", width=150)),
-            ft.DataCell(ft.Text("0", width=100)),
+            ft.DataCell(ft.Text("          0.00", width=150)),
+            ft.DataCell(ft.Text("          0", width=100)),
             ft.DataCell(ft.Text("", width=150)),
             ft.DataCell(ft.Text("", width=150)),
             ft.DataCell(ft.Text("", width=120)),
@@ -141,7 +141,7 @@ def main(page: ft.Page):
     # Botón para el enlace PDF
     boton_pdf = ft.TextButton(
         "PDF",
-        on_click=lambda e: page.launch_url("https://example.com/your-pdf-file.pdf"),
+        on_click=lambda e: page.launch_url("COTIZACION_CONDOMINIO.pdf"),
     )
     
     # Sección de información adicional con ComboBox para opciones Sí/No
@@ -149,31 +149,36 @@ def main(page: ft.Page):
         [
             ft.Column(
                 [
-                    ft.Row([ft.Text("Sucursal:      "), ft.TextField(value="Iquique", width=200)]),
-                    ft.Row([ft.Text("Ej.Comercial:"), ft.TextField(value="Roxana Perez", width=200)]),
-                    ft.Row([ft.Text("Corredor:     "), ft.TextField(value="Orlando Navarro", width=200)]),
-                    ft.Row([ft.Text("RUT:            "), ft.TextField(value="56047380-K", width=200)]),
-                    ft.Row([ft.Text("Nombre:     "), ft.TextField(value="EDIFICIO JUAN FRANCISCO GONZALEZ", width=350)]),
-                    ft.Row([ft.Text("Fecha  Vcto:"), ft.TextField(value="30-01-2024", width=200)]),
-                    ft.Row([ft.Text("Recargo:      "), ft.TextField(value="0%", width=100)]),
+                    ft.Row([ft.Text("Sucursal:       "),
+                        ft.Dropdown(
+                            options=[ft.dropdown.Option("Matriz"), ft.dropdown.Option("La Florida"), ft.dropdown.Option("Iquique")],
+                            value="No",
+                            width=200,
+                        )]),
+                    ft.Row([ft.Text("Ej.Comercial: "), ft.TextField(value="Roxana Perez", width=200)]),
+                    ft.Row([ft.Text("Corredor:      "), ft.TextField(value="Orlando Navarro", width=200)]),
+                    ft.Row([ft.Text("RUT:              "), ft.TextField(value="56047380-K", width=200)]),
+                    ft.Row([ft.Text("Nombre:       "), ft.TextField(value="EDIFICIO JUAN FRANCISCO GONZALEZ", width=350)]),
+                    ft.Row([ft.Text("Fecha Vcto:   "), ft.TextField(value="30-01-2024", width=200)]),
+                    ft.Row([ft.Text("Recargo:       "), ft.TextField(value="0%", width=100)]),
                 ],
                 spacing=10,
                 width=500,
             ),
             ft.Column(
                 [
-                    ft.Row([ft.Text("Descuento Max:"), ft.TextField(value="0%", width=100)]),
-                    ft.Row([ft.Text("Descuento:        "), ft.TextField(value="0%", width=100)]),
+                    ft.Row([ft.Text("Descuento Max"), ft.TextField(value="0%", width=100)]),
+                    ft.Row([ft.Text("Descuento:       "), ft.TextField(value="0%", width=100)]),
                     ft.Row([
                         ft.Text("T. Construcción:"),
                         ft.Dropdown(
-                            options=[ft.dropdown.Option("Sí"), ft.dropdown.Option("No")],
+                            options=[ft.dropdown.Option("A:Incombustible"), ft.dropdown.Option("B:Mixto"), ft.dropdown.Option("C:Combustible")],
                             value="No",
                             width=200,
                         )
                     ]),
                     ft.Row([
-                        ft.Text("Borde Costero :"),
+                        ft.Text("Borde Costero:  "),
                         ft.Dropdown(
                             options=[ft.dropdown.Option("Sí"), ft.dropdown.Option("No")],
                             value="No",
@@ -181,24 +186,24 @@ def main(page: ft.Page):
                         )
                     ]),
                     ft.Row([
-                        ft.Text("Zona:                "),
+                        ft.Text("Zona:                 "),
                         ft.Dropdown(
-                            options=[ft.dropdown.Option("Sí"), ft.dropdown.Option("No")],
+                            options=[ft.dropdown.Option("Región 1 - 4"), ft.dropdown.Option("Región 5"), ft.dropdown.Option("Región 1 -12"), ft.dropdown.Option("Región 13 Met"), ft.dropdown.Option("Región 14")],
                             value="No",
-                            width=100,
+                            width=150,
                         )
                     ]),
                     ft.Row([ft.Text("Capacidad por Categoría:"), ft.TextField(value="510.000", width=150)]),
-                    ft.Row([ft.Text("Control Suscripción:        "), ft.TextField(value="En Contrato", width=150)]),
+                    ft.Row([ft.Text("Control Suscripción:         "), ft.TextField(value="En Contrato", width=150)]),
                 ],
                 spacing=10,
                 width=500,
             ),
             ft.Column(
                 [
-                    ft.Text("Siniestralidad", weight="bold", size=18),
-                    ft.Row([ft.Text("Inc. adic.:"), ft.TextField(value="45", width=100)]),
-                    ft.Row([ft.Text("Sismo      :"), ft.TextField(value="-", width=100)]),
+                    ft.Text("Siniestralidad", weight="bold",size=18),
+                    ft.Row([ft.Text("Inc. adic.:  "), ft.TextField(value="45", width=100)]),
+                    ft.Row([ft.Text("Sismo:       "), ft.TextField(value="-", width=100)]),
                     ft.Row([ft.Text("Terrorismo:"), ft.TextField(value="-", width=100)]),
                     ft.Row([ft.Text("42%", color="green", size=16)]),
                 ],
@@ -208,11 +213,12 @@ def main(page: ft.Page):
         ],
         alignment=ft.MainAxisAlignment.START,
     )
-
+    
     # Se agrega todo a la página
     page.add(
         ft.Image(src_base64=imagen_base64),
         ft.Text("Cotizador Condominios", size=24, weight="bold", color="green"),
+        boton_pdf,  # Aquí se agrega el botón PDF
         info_section,
         ft.Divider(height=20),
         ft.Column(
@@ -224,5 +230,5 @@ def main(page: ft.Page):
             spacing=20,
         ),
     )
-
+    
 ft.app(target=main)
