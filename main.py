@@ -160,7 +160,7 @@ def main(page: ft.Page):
                     ft.Row([ft.Text("RUT:            "), ft.TextField(value="56047380-K", width=200)]),
                     ft.Row([ft.Text("Nombre:     "), ft.TextField(value="EDIFICIO JUAN FRANCISCO GONZALEZ", width=350)]),
                     ft.Row([ft.Text("Fecha  Vcto:"), ft.TextField(value="30-01-2024", width=200)]),
-                    ft.Row([ft.Text("Recargo:      "), ft.TextField(value="0%", width=100)]),
+                    ft.Row([ft.Text("Recargo:     "), ft.TextField(value="0%", width=100)]),
                 ],
                 spacing=10,
                 width=500,
@@ -178,7 +178,7 @@ def main(page: ft.Page):
                         )
                     ]),
                     ft.Row([
-                        ft.Text("Borde Costero :"),
+                        ft.Text("Borde Costero:  "),
                         ft.Dropdown(
                             options=[ft.dropdown.Option("Sí"), ft.dropdown.Option("No")],
                             value="No",
@@ -186,7 +186,7 @@ def main(page: ft.Page):
                         )
                     ]),
                     ft.Row([
-                        ft.Text("Zona:                "),
+                        ft.Text("Zona:                 "),
                         ft.Dropdown(
                             options=[ft.dropdown.Option("Región 1 - 4"), ft.dropdown.Option("Región 5"), ft.dropdown.Option("Región 1 -12"), ft.dropdown.Option("Región 13 Met"), ft.dropdown.Option("Región 14")],
                             value="No",
@@ -194,7 +194,7 @@ def main(page: ft.Page):
                         )
                     ]),
                     ft.Row([ft.Text("Capacidad por Categoría:"), ft.TextField(value="510.000", width=150)]),
-                    ft.Row([ft.Text("Control Suscripción:        "), ft.TextField(value="En Contrato", width=150)]),
+                    ft.Row([ft.Text("Control Suscripción:         "), ft.TextField(value="En Contrato", width=150)]),
                 ],
                 spacing=10,
                 width=500,
@@ -202,8 +202,8 @@ def main(page: ft.Page):
             ft.Column(
                 [
                     ft.Text("Siniestralidad", weight="bold", size=18),
-                    ft.Row([ft.Text("Inc. adic.:"), ft.TextField(value="45", width=100)]),
-                    ft.Row([ft.Text("Sismo      :"), ft.TextField(value="-", width=100)]),
+                    ft.Row([ft.Text("Inc. adic.:  "), ft.TextField(value="45", width=100)]),
+                    ft.Row([ft.Text("Sismo:       "), ft.TextField(value="-", width=100)]),
                     ft.Row([ft.Text("Terrorismo:"), ft.TextField(value="-", width=100)]),
                     ft.Row([ft.Text("42%", color="green", size=16)]),
                 ],
@@ -213,7 +213,7 @@ def main(page: ft.Page):
         ],
         alignment=ft.MainAxisAlignment.START,
     )
-
+    
     # Se agrega todo a la página
     page.add(
         ft.Image(src_base64=imagen_base64),
