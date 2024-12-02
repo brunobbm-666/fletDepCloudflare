@@ -201,7 +201,7 @@ def main(page: ft.Page):
             ),
             ft.Column(
                 [
-                    ft.Text("Siniestralidad", weight="bold", size=18),
+                    ft.Text("Siniestralidad", weight="bold",size=18),
                     ft.Row([ft.Text("Inc. adic.:  "), ft.TextField(value="45", width=100)]),
                     ft.Row([ft.Text("Sismo:       "), ft.TextField(value="-", width=100)]),
                     ft.Row([ft.Text("Terrorismo:"), ft.TextField(value="-", width=100)]),
